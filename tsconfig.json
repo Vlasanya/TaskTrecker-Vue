@@ -1,4 +1,13 @@
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "types": ["jest", "node"],
+    "jsx": "preserve"
+  },
+  "include": ["tests/**/*.ts", "components/**/*.vue", "vue-shims.d.ts"]
 }

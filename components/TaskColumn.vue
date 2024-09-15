@@ -8,6 +8,7 @@
         class="task-card"
         draggable="true"
         @dragstart="(event) => onDragStart(event, task)"
+        :data-testid="'task-card-' + task.id"
       >
         <div v-if="editingTaskId === task.id">
           <input v-model="editedTask.title" placeholder="Title" />
@@ -58,7 +59,7 @@
     </div>
     <button @click="openAddTaskModal">Add a card</button>
 
-    <div v-if="isAddingTask" class="modal">
+    <div v-if="isAddingTask" class="modal" data-testid="add-task-modal">
       <h3>Add New Task</h3>
       <input v-model="newTask.title" placeholder="Title" />
       <textarea
